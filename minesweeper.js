@@ -133,7 +133,8 @@ export const reveal = (game, { x, y, now = Date.now() }) => {
   };
 };
 
-export const toRows = (game, { cheat = false }) => {
+export const toRows = (game) => {
+  let cheat = false; // TODO move to an arg.
   let rows = [];
   for(let r = 0; r < game.height; r++) {
     const index = r * game.width;

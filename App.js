@@ -2,20 +2,16 @@ import React from 'react';
 import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
 import { create, reveal, cellState, toRows } from './minesweeper';
 
-
-// New game button
-// ---------------
-// [ ] [ ] [*] [1]
-//
+const GAME_CONFIG = { width: 10, height: 10, mines: 20 };
 
 export default class App extends React.Component {
   state = {
-    game: create({ width: 10, height: 10, mines: 3 })
+    game: create(GAME_CONFIG),
   };
 
   newGame = () => {
     this.setState({
-      game: create({ width: 10, height: 10, mines: 50 }) // cells: [], alive: bool, startedAt, endedAt
+      game: create(GAME_CONFIG),
     });
   }
 
